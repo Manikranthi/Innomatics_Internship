@@ -1,0 +1,9 @@
+def comparison(x):
+    if (x%2==0):
+        if(6<x<=20):
+            print("Weird")
+        if(2<x<5 or x>20):
+            print("Not Weird")    
+    else:
+        print("Weird")
+comparison(input())

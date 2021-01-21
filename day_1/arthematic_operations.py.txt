@@ -1,0 +1,6 @@
+def ar_op(x,y):
+    print(x+y)
+    print(x-y)
+    print(x*y)
+    
+ar_op(input(),input())
