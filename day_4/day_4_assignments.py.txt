@@ -1,0 +1,216 @@
+1. swap case
+
+def swap_case(s):
+    st=s.swapcase()
+    return st
+
+2. String split and join
+
+def split_and_join(line):
+    st=line.replace(" ","-")
+    return st
+
+
+3 what is your name
+
+def print_full_name(a, b):
+    print(f"Hello {a} {b}! You just delved into python.".format(a,b))
+
+4 Mutations
+
+def mutate_string(string, position, character):
+    l=list(string)
+    l[position]=character
+    st="".join(l)
+    return st
+
+5 Find a string
+
+def count_substring(string, sub_string):
+    n=0
+    
+    for i in range(len(string)):
+      
+      if (i+len(sub_string)<=len(string) ):
+        if (string[i:i +len(sub_string)]==sub_string):
+            n=n+1
+    return n
+
+6 String Validators
+
+s=input()
+l=0
+m=0
+n=0
+o=0
+p=0
+for i in s:
+  if (i.isalpha() or i.isnumeric()):
+    print("True")
+    break
+  else:
+    l=l+1
+    if(l==len(s)):
+      print("False")  
+for i in s:
+  if (i.isalpha()):
+    print("True")
+    break
+  else:
+    m=m+1
+    if(m==len(s)):
+      print("False")
+for i in s:
+  if ( i.isnumeric()):
+    print("True")
+    break
+  else:
+    n=n+1
+    if(n==len(s)):
+      print("False")  
+for i in s:
+  if (i.islower()):
+    print("True")
+    break
+  else:
+    o=o+1
+    if(o==len(s)):
+      print("False")  
+for i in s:
+  if (i.isupper()):
+    print("True")
+    break
+  else:
+    p=p+1
+    if(p==len(s)):
+      print("False")  
+
+7 Text Alignment
+
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).______(thickness-1)+c+(c*i).______(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).______(thickness*2)+(c*thickness).______(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).______(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).______(thickness*2)+(c*thickness).______(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).______(thickness)+c+(c*(thickness-i-1)).______(thickness)).______(thickness*6))
+
+8 Text Wrap
+
+def wrap(string, max_width):
+    l1=textwrap.wrap(string,max_width)
+    stri=''
+    for i in l1:
+        stri=stri+i+"\n"
+    return stri
+
+9 Designer Door mat
+
+n,m=map(int,input().split())
+for i in range(1,n,2):
+    print(str('.|.'*i).center(m,'-'))
+print('WELCOME'.center(m,'-'))
+for i in range(n-2,-1,-2):
+    print(str('.|.'*i).center(m,'-'))
+
+
+10  String formating
+
+def print_formatted(number):
+    l1 = len(bin(number)[2:])
+    for i in range(1,(number+1)):
+       print(str(i).rjust(l1,' '),end=" ")
+       print(oct(i)[2:].rjust(l1,' '),end=" ")
+       print(((hex(i)[2:]).upper()).rjust(l1,' '),end=" ")
+       print(bin(i)[2:].rjust(l1,' '),end=" ")
+       print("")
+
+
+11.Alphabet rangoli
+
+def print_rangoli(size):
+    
+    width  = size*4-3
+    string = ''
+
+    for i in range(1,size+1):
+        for j in range(0,i):
+            string += chr(96+size-j)
+            if len(string) < width :
+                string += '-'
+        for k in range(i-1,0,-1):    
+            string += chr(97+size-k)
+            if len(string) < width :
+                string += '-'
+        print(string.center(width,'-'))
+        string = ''
+
+    for i in range(size-1,0,-1):
+        string = ''
+        for j in range(0,i):
+            string += chr(96+size-j)
+            if len(string) < width :
+                string += '-'
+        for k in range(i-1,0,-1):
+            string += chr(97+size-k)
+            if len(string) < width :
+                string += '-'
+        print(string.center(width,'-'))
+
+12  Capitalize
+
+def solve(s):
+    for i in s.split():
+        s = s.replace(i,i.capitalize())
+    return s
+
+13 The Minion game
+
+def minion_game(string):
+    player1 = 0;
+    player2 = 0;
+    str_len = len(string)
+    for i in range(str_len):
+        if s[i] in "AEIOU":
+            player1 += (str_len)-i
+        else :
+            player2 += (str_len)-i
+    
+    if player1 > player2:
+        print("Kevin", player1)
+    elif player1 < player2:
+        print("Stuart",player2)
+    elif player1 == player2:
+        print("Draw")
+    else :
+        print("Draw")
+
+
+14 Merge the tools
+
+def merge_the_tools(string, k):
+    num_subsegments = int(len(string) / k)
+    for index in range(num_subsegments):
+   
+        t = string[index * k : (index + 1) * k]
+        u = ""
+        for c in t:
+            if c not in u:
+                u += c
+
+        print(u)
